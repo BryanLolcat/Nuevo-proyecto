@@ -1,1 +1,3 @@
 # primer proyecto 
+
+#clase ccomp
