@@ -15,7 +15,9 @@ int main()
         cout << "El primero es mayor";
     if ( b > a && b > c)
         cout << "El segundo valor es mayor";
+    if ( c > a && c > b)
+        cout << "El tercer valor es mayor"
     else 
-        cout << "El tercer valor es mayor";
+        cout << "Dos o mas valores son iguales";
 
 }
