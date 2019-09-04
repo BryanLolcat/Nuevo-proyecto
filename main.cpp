@@ -4,16 +4,28 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cout << "Ingrese el valor : " ;
-    cin >> n;
-    int cont = 1;
-    while (n > 0){
-        for (n;n % 10 == 0;n = n / 10){
-            cont = cont + 1;
-            cout << cont;
-        }
-    }
-    return 0;
-
-}
+    int a;
+  cin >> a ;
+  int limit = 1;
+  int res = 1;
+  while (limit < a ){
+    if (a % 10 != 0)
+      res = res + 1;
+      a = a - 1;
+    if (a % 10 == 0)
+      res = res * 2;
+      a = a / 10;
+  }
+    
+  int b;
+  cin >> b ;
+  int re = 1;
+  while (b > 0){
+    if (b % 2 != 0)
+      re =re + 1;
+      b = b - 1 ;
+    if (a % 2 == 0)
+      re = re * 10;
+      b = b / 2;
+  }
+  cout << re;
