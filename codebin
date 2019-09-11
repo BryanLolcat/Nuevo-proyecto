@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    cin >> a ;
+    int limit = 1;
+    int res = 1;
+    while (limit < a ){
+        if (a % 10 != 0)
+          res = res + 1;
+          a = a - 1;
+        if (a % 10 == 0)
+          res = res * 2;
+          a = a / 10;
+}
+    cout << res << endl;
+    int b;
+    cin >> b ;
+    int re = 1;
+    while (b > 0){
+        if (b % 2 != 0)
+            re =re + 1;
+            b = b - 1 ;
+        if (a % 2 == 0)
+            re = re * 10;
+            b = b / 2;
+
+}
+    cout << re << endl;
+}
