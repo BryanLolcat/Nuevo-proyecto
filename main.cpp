@@ -58,9 +58,44 @@ bool sinumero(char num){
     else
         return false;
 }
+
+bool siletraMayor(char let){
+    int trad = static_cast<int>(let);
+    if ((trad >= 65)&&(trad <= 90))
+        return true;
+    else
+        return false;
+}
+
+bool siletraMenor(char let){
+    int trad = static_cast<int>(let);
+    if ((trad >= 97)&&(trad <= 122))
+        return true;
+    else
+        return false;
+}
+
+char convMayor(char let){
+    int trad = static_cast<int>(let);
+    int help;
+    if (siletraMenor(let))
+        help = trad - 32;
+    char cres = static_cast<char>(help);
+    return cres;
+}
+
+char convMenor(char let){
+    int trad = static_cast<int>(let);
+    int help;
+    if (siletraMayor(let))
+        help = trad + 32 ;
+    char cres = static_cast<char>(help);
+    return cres;
+
+}
 int main()
 {
-    int n ;
+    char n ;
     cin >> n ;
 
     /*imprimirdigito(n);
@@ -69,9 +104,14 @@ int main()
 
     cout << espalindrome(n)<< endl;
 
-    cout << fibonacci(n);*/
+    cout << fibonacci(n);
 
-    cout << sinumero(n) << endl;
-
+    cout << sinumero(n) << endl;*/
+    
+    if (siletraMayor(n))
+        cout << convMenor(n);
+    if (siletraMenor(n))
+        cout << convMayor(n);
+    
     return 0;
 }
