@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int Itetam_cad(char *cad){
+int Itetam_cad(char cad[]){
     int tam = 0;
     for (int i = 0; cad[i] != '\0'; i++){
         tam++;
@@ -10,7 +10,7 @@ int Itetam_cad(char *cad){
     return tam;
 }
 
-int Rectam_cad(char *cad, int c = 0){
+int Rectam_cad(char cad[], int c = 0){
     if (cad[c] != '\0'){
         c++;
         return Rectam_cad(cad,c);
@@ -19,7 +19,7 @@ int Rectam_cad(char *cad, int c = 0){
         return c;
 }
 
-bool ItePalin(char *cad, int tam){
+bool ItePalin(char cad[], int tam){
     bool val = true;
     for (int i = 0; i < tam; i++){
         if (cad[i] != cad[tam-1])
@@ -29,13 +29,13 @@ bool ItePalin(char *cad, int tam){
     }
     return val;
 }
-bool RecPalin(char *cad, int tam){
+bool RecPalin(char cad[], int tam){
 
 
 
 }
 
-void swap (char *cad,int x,int y){
+void swap (char cad[],int x,int y){
     int c;
     c = *(cad + x);
     *(cad + x) =  *(cad + y);
@@ -43,7 +43,7 @@ void swap (char *cad,int x,int y){
 
 }
 
-void RevertIter(char *n,int tam){
+void RevertIter(char n[],int tam){
     tam--;
     int x = tam/2;
     int y= 0;
@@ -55,7 +55,7 @@ void RevertIter(char *n,int tam){
     }
 }
 
- void RevertRec(char *n,int tam,int c = 0){
+ void RevertRec(char n[],int tam,int c = 0){
     if (c < tam--){
         swap (n,c,tam);
         c++;
