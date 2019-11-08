@@ -1,101 +1,146 @@
 #include <iostream>
 using namespace std;
-// Esta base de datos trabajara de acuerdo a los personajes del juego League of Legends y a las estadisticas de estos que cambian con objetos durante las partidas
-class Champ{ // Clase definida para los personajes
-  private:
-    string name;
-    string range;
-    int AD;
-    int AP;
-    int AS;
-    int HP;
-    int HR;
-    int MR;
-    int AR;
-    int MS;
-  public:
-    Champ(string);
-    void leer();
+
+class Persona {
+protected :
+  string nombre;
+  string dni;
+  int edad;
+public :
+  Persona ();
+  Persona (string _nombre, string  _dni, int _edad){
+    nombre = _nombre;
+    dni = _dni;
+    edad = _edad;
+  }
+  string getNombre(){
+    return nombre;
+  }
+  string getDni(){
+    return dni;
+  }
+  int getEdad(){
+    return edad;
+  }
 };
 
-Champ::Champ (string _name){
-  name = _name;
+class Evaluador {
+private :
+  string area;
+public :
+  Evaluador ();
+  Evaluador (string _nombre, string  _dni, int _edad, string _area):
+  Persona (_nombre, _dni, _edad), area(_area){}
+  string getArea(){
+    return area;
+  }
+};
 
+class Cliente {
+private :
+  int pago ;
+public :
+  Cliente();
+  Cliente(string _nombre, string  _dni, int _edad, int _pago):
+  Persona (_nombre, _dni, _edad), pago(_pago){}
+  int getPago(){
+    return pago;
+  }
+};
+
+class EvalAir {
+  protected :
+    int nvlAir;
+  public :
+    EvalAir();
+    EvalAir(int _nvlAir){
+      nvlAir = _nvlAir;
+    }
+    int getNvlAir(){
+      return nvlAir;
+    }
+    void CalAir(){
+      if (nvlAir < 100){
+        cout << "La calidad del aire es la correcta" << endl;
+      }
+      else {
+        cout << "La calidad del aire no cumple con los estandares de calidad " << endl;
+      }
+    } 
+};
+
+class EvalAgu {
+  protected :
+    int nvlAgu;
+  public :
+    EvalAgu();
+    EvalAgu(int _nvlAgu){
+      nvlAgu = _nvlAgu;
+    }
+    int getNvlAgu(){
+      return nvlAgu;
+    }
+    void CalAgu(){
+      if (nvlAgu < 100){
+        cout << "La calidad del agua es la correcta" << endl;
+      }
+      else {
+        cout << "La calidad del agua no cumple con los estandares de calidad " << endl;
+      }
+    } 
+};
+
+class EvalSue {
+  protected :
+    int nvlSue;
+  public :
+    EvalSue();
+    EvalSue(int _nvlSue){
+      nvlSue = _nvlSue;
+    }
+    int getNvlSue(){
+      return nvlSue;
+    }
+    void CalSue(){
+      if (nvlSue < 100){
+        cout << "La calidad del suelo es la correcta" << endl;
+      }
+      else {
+        cout << "La calidad del suelo no cumple con los estandares de calidad " << endl;
+      }
+    } 
+};
+
+class Propiedad {
+protected :
+  string nombrep;
+  string direccion;
+  int duracion;
+public :
+  Propiedad ();
+  Propiedad (string _nombrep, string _direccion, int _duracion){
+    nombrep = _nombrep;
+    direccion = _direccion;
+    duracion = _duracion;
+  }
+  string getNombrep(){
+    return nombrep;
+  }
+  string getDireccion(){
+    return direccion;
+  }
+  int getDuracion(){
+    return duracion;
+  }
+};
+
+class Grifo {
+public :
+  Grifo (string _nombrep, string _direccion, int _duracion, int _nvlAir, int _nvlSue):
+  Propiedad (_nombrep, _direccion, _duracion), EvalAir(int _nvlAir), EvalSue(int _nvlSue){}
+  
 }
 
-class ObjPas{ // Clase definida para los objetos solo pasivos enteros
-  private:
-    string name;
-    int ADo;
-    int APo;
-    int ASo;
-    int HPo;
-    int HRo;
-    int MRo;
-    int ARo;
-    int MSo;
-  public:
-    ObjPas(string);
-    void leer();
-    int add();
-};
-
-class ObjPer{ // Clase definida para los objetos solo pasivos con porcentajes
-  private:
-    string name;
-    float ADo;
-    float APo;
-    float ASo;
-    float HPo;
-    float HRo;
-    float MRo;
-    float ARo;
-    float MSo;
-  public:
-    ObjPas(string);
-    void leer();
-    int add();
-};
-
-
-class ObjAct{ // Clase definida para los objetos activables
-  private:
-    string name;
-    int ADo;
-    int APo;
-    int ASo;
-    int HPo;
-    int HRo;
-    int MRo;
-    int ARo;
-    int MSo;
-    int CD;
-    int DT;
-  public:
-    ObjPas(string);
-    void leer();
-    int add();
-};
-
-class ObjChar { // Clase definida para los objetos con cargas
-  private:
-    string name;
-    int ADo;
-    int APo;
-    int ASo;
-    int HPo;
-    int HRo;
-    int MRo;
-    int ARo;
-    int MSo;
-    int CN;
-  public:
-    ObjPas(string);
-    void leer();
-    int add();
-};
-
-
 int main() {
-  std::cout << "Hello World!\n";
+  cout << "Hello World!\n";
 }
